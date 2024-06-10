@@ -1,12 +1,18 @@
 {
   "name": "bundle_webpack",
   "version": "1.0.0",
-  "description": "webpack test",
-  "main": "index.js",
+  "description": "",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode development"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "MIT",
+  "devDependencies": {
+    "lodash": "^4.17.21",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4"
+  }
 }
