@@ -5,7 +5,9 @@ module.exports = merge(common, {
   mode: "development",
   devtool: "inline-source-map",
   devServer: {
-    static: "./dist/src/html/ia",
+    static: "./",
     open: true,
-  }
+    compress: true,
+    port: 9000,
+  },
 });
