@@ -1,12 +1,20 @@
-import _ from "lodash";
+// function getComponent() {
+//   return import("lodash")
+//     .then(({ default: _ }) => {
+//       const element = document.createElement("div");
+//       element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+//       return element;
+//     })
+//     .catch((error) => "error!!")
+// }
 
-function components() {
+async function getComponent() {
   const element = document.createElement("div");
-  const btn = document.createElement("button");
-
-  element.innerHTML = _.join(["hello", "world"], " ");
-  
-  return element
+  const { default: _ } = await import("lodash");
+  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+  return element;
 }
 
-document.body.appendChild(components());
+getComponent().then((component) => {
+  document.body.appendChild(component());
+})
