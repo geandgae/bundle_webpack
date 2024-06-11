@@ -1,6 +1,4 @@
 # bundle_webpack
 webpack test
 
-* lodash는 삭제하자!!!
-
-* webpack-dev-middleware 분리
+* 미들웨어 설정 / server.js 분리 / "serve": "node server.js",
