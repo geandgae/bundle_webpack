@@ -1,4 +1,4 @@
 # bundle_webpack
 webpack test
 
-* lodash는 삭제하자!!!
+* 여기까지 스터디
