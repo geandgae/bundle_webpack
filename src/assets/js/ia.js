@@ -1,3 +1,3 @@
-import css from "@css/default.css";
+import scss from "@scss/default.scss";
 
 console.log("ia!!!!!!!");
