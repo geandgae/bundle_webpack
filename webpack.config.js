@@ -1,56 +1,29 @@
-const { type } = require("os");
 const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { OptimizationStages } = require("webpack");
 
 module.exports = {
-  entry: "./src/index.js",
-  output: {
-    filename: "bundle.js",
-    path: path.resolve(__dirname, "dist"),
+  mode: "development",
+  entry: {
+    index: "./src/index.js",
+    print: "./src/print.js",
   },
-
-  module: {
-    rules: [
-      {
-        test: /\.css$/i, //정규표현식 i는 대소문자 구분하지 않음
-        use: ["style-loader", "css-loader"],
-      },
-      {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: "asset/resource",
-      },
-      {
-        test: /\.(woff|woff2|eot|ttf|otf)$/i,
-        type: "asset/resource",
-      },
-      {
-        test: /\.(csv|tsv)$/i,
-        use: ["csv-loader"],
-      },
-      {
-        test: /\.xml$/i,
-        use: ["xml-loader"],
-      },
-      {
-        test: /\.toml$/i,
-        type: "json",
-        parser: {
-          parse: toml.parse,
-        },
-      },
-      {
-        test: /\.yaml$/i,
-        type: "json",
-        parser: {
-          parse: yaml.parse,
-        },
-      },
-      {
-        test: /\.json5$/i,
-        type: "json",
-        parser: {
-          parse: json5.parse,
-        },
-      },
-    ],
+  devtool: "inline-source-map",
+  devServer: {
+    // http://[devServer.host]:[devServer.port]/[output.publicPath]/[output.filename]
+    static: "./dist",
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: "development",
+    })
+  ],
+  output: {
+    filename: "[name].bundle.js",
+    path: path.resolve(__dirname, "dist"),
+    clean: true,
+  },
+  optimization: {
+    runtimeChunk: "single",
   },
 };
