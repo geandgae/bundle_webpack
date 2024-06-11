@@ -5,8 +5,17 @@ const { OptimizationStages } = require("webpack");
 module.exports = {
   mode: "development",
   entry: {
-    index: "./src/index.js",
-    print: "./src/print.js",
+    // index: "./src/index.js",
+    // another: "./src/another-module.js",
+    index: {
+      import: './src/index.js',
+      dependOn: 'shared',
+    },
+    another: {
+      import: './src/another-module.js',
+      dependOn: 'shared',
+    },
+    shared: 'lodash',
   },
   devtool: "inline-source-map",
   devServer: {
@@ -26,5 +35,8 @@ module.exports = {
   },
   optimization: {
     runtimeChunk: "single",
+    // splitChunks: {
+    //   chunks: 'all',
+    // },
   },
 };
