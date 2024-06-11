@@ -16,41 +16,41 @@ module.exports = {
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: "asset/resource"
+        type: "asset/resource",
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
-        type: 'asset/resource',
+        type: "asset/resource",
       },
       {
         test: /\.(csv|tsv)$/i,
-        use: ['csv-loader'],
+        use: ["csv-loader"],
       },
       {
         test: /\.xml$/i,
-        use: ['xml-loader'],
+        use: ["xml-loader"],
       },
-     {
-       test: /\.toml$/i,
-       type: 'json',
-       parser: {
-         parse: toml.parse,
-       },
-     },
-     {
-       test: /\.yaml$/i,
-       type: 'json',
-       parser: {
-         parse: yaml.parse,
-       },
-     },
-     {
-       test: /\.json5$/i,
-       type: 'json',
-       parser: {
-         parse: json5.parse,
-       },
-     },
+      {
+        test: /\.toml$/i,
+        type: "json",
+        parser: {
+          parse: toml.parse,
+        },
+      },
+      {
+        test: /\.yaml$/i,
+        type: "json",
+        parser: {
+          parse: yaml.parse,
+        },
+      },
+      {
+        test: /\.json5$/i,
+        type: "json",
+        parser: {
+          parse: json5.parse,
+        },
+      },
     ],
   },
 };
