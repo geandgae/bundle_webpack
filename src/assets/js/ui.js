@@ -1,3 +1,1 @@
-import scss from "@scss/default.scss";
-
-console.log("ui!!!");
+console.log("test ui!!!");
