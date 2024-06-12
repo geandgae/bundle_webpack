@@ -32,3 +32,75 @@ my-project/
 
 
 cmd tree ./폴더명
+
+src/
+├─assets
+│  ├─images
+│  ├─js
+│  │  |-- main.js
+│  └─styles
+│      ├─css
+│      ├─fonts
+│      └─scss
+│         |-- style.js
+└─html
+    ├─ia
+    │  |-- index.html
+    └─pages
+
+
+my_project/
+├── README.md
+├── .gitignore
+├── src/
+├── assets/
+│   ├── images/
+│   │   └── (image files)
+│   ├── js/
+│   │   └── main.js
+│   ├── styles/
+│       ├── css/
+│       │   └── (compiled CSS files)
+│       ├── fonts/
+│       │   └── (font files)
+│       └── scss/
+│           └── style.scss
+└── html/
+    ├── ia/
+    │   └── index.html
+    └── pages/
+        └── (other HTML pages)
+
+
+my_project/
+├── README.md
+├── .gitignore
+├── src/
+│   ├── assets/
+│   │   ├── images/
+│   │   │   └── (image files)
+│   │   ├── js/
+│   │   │   └── main.js
+│   │   └── styles/
+│   │       ├── css/
+│   │       │   └── (compiled CSS files)
+│   │       ├── fonts/
+│   │       │   └── (font files)
+│   │       └── scss/
+│   │           └── style.scss
+│   └── html/
+│       ├── index.html
+│       └── pages/
+│           └── (additional HTML pages)
+└── docs/
+    └── (documentation files)
+
+    my_project/src/assets/style/css/
+
+
+
+- 웹팩을 사용해서 프로젝트를 관리할거임
+- ia/index.html을 시작화면
+- style.scss를 컴파일 하면 my_project/src/assets/style/css/ 폴더에 저장 (압축하지 않음)
+- main.js는 my_project/src/assets/js/bundle 폴더에 저장 (난독화 및 압축)
+- webpackserver를 사용해서 테스트
