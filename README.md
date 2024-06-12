@@ -8,6 +8,8 @@ webpack test
 
 * HtmlWebpackPlugin / hot
 
+* webpack server live
+
 
 devServer 설정:
 
